@@ -86,17 +86,26 @@ new Vue({
         },
         checkWin: function() 
         {
-            if (this.getMonsterHealth() <= 0) {
-                if (confirm('You won! New Game?')) {
+            if (this.getMonsterHealth() <= 0)
+            {
+                if (confirm('You won! New Game?'))
+                {
                     this.startGame();
-                } else {
+                } 
+                else
+                {
                     this.gameIsRunning = false;
                 }
                 return true;
-            } else if (this.getPlayerHealth() <= 0) {
-                if (confirm('You lost! New Game?')) {
+            }
+            else if (this.getPlayerHealth() <= 0)
+            {
+                if (confirm('You lost! New Game?'))
+                {
                     this.startGame();
-                } else {
+                } 
+                else
+                {
                     this.gameIsRunning = false;
                 }
                 return true;
@@ -127,7 +136,7 @@ new Vue({
                 this.monster.Color = 'green';
             }
         },
-        //geter and seter
+        //geters and seters
         getPlayerHealth : function () {
             return this.player.Health;
         },
