@@ -13,18 +13,20 @@ new Vue({
         turns: []
     },
     methods: {
-        startGame: function () {
+        startGame: function () 
+        {
             this.gameIsRunning = true;
             this.turns = [];
             this.setPlayerHealth(100);
             this.setMonsterHealth(100);
-            this.colorChange();
-            this.MonsterColorChange();
+            this.playerColorChange();
+            this.monsterColorChange();
         },
-        attack: function () {
+        attack: function () 
+        {
             var damage = this.calculateDamage(3, 10);
             this.setMonsterHealth(this.getMonsterHealth() - damage);
-            this.MonsterColorChange();
+            this.monsterColorChange();
             this.turns.unshift({
                 isPlayer: true,
                 text: 'Player hits Monster for ' + damage
@@ -34,10 +36,11 @@ new Vue({
             }
             this.monsterAttacks();
         },
-        specialAttack: function () {
+        specialAttack: function () 
+        {
             var damage = this.calculateDamage(10, 20);
             this.setMonsterHealth(this.getMonsterHealth() - damage);
-            this.MonsterColorChange();
+            this.monsterColorChange();
             this.turns.unshift({
                 isPlayer: true,
                 text: 'Player hits Monster hard for ' + damage
@@ -47,7 +50,8 @@ new Vue({
             }
             this.monsterAttacks();
         },
-        heal: function () {
+        heal: function () 
+        {
             if (this.getPlayerHealth() <= 90) {
                 this.setPlayerHealth(this.getPlayerHealth() + 10);
             } else {
@@ -59,13 +63,15 @@ new Vue({
             });
             this.monsterAttacks();
         },
-        giveUp: function () {
+        giveUp: function () 
+        {
             this.gameIsRunning = false;
         },
-        monsterAttacks: function() {
+        monsterAttacks: function()
+         {
             var damage = this.calculateDamage(5, 12);
             this.setPlayerHealth(this.getPlayerHealth() - damage)
-            this.colorChange();
+            this.playerColorChange();
             this.turns.unshift({
                 isPlayer: false,
                 text: 'Monster hits Player for ' + damage
@@ -74,10 +80,12 @@ new Vue({
                 return;
             }
         },
-        calculateDamage: function(min, max) {
+        calculateDamage: function(min, max) 
+        {
             return Math.max(Math.floor(Math.random() * max) + 1, min);
         },
-        checkWin: function() {
+        checkWin: function() 
+        {
             if (this.getMonsterHealth() <= 0) {
                 if (confirm('You won! New Game?')) {
                     this.startGame();
@@ -95,7 +103,8 @@ new Vue({
             }
             return false;
         },
-        colorChange : function (){
+        playerColorChange : function ()
+        {
             if (this.getPlayerHealth() < 70){
                 this.player.Color = '#FFC107';
             }
@@ -106,7 +115,8 @@ new Vue({
                 this.player.Color = 'green';
             }
         },
-        MonsterColorChange : function (){
+        monsterColorChange: function ()
+        {
             if (this.getMonsterHealth() < 70){
                 this.monster.Color = '#FFC107';
             }
