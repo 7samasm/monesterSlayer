@@ -1,13 +1,13 @@
 new Vue({
     el: '#app',
     data: {
-        player: {
-            Health : 100,
-            Color : 'green'
+        Player: {
+            health : 100,
+            color : 'green'
         },
-        monster: {
-            Health : 100,
-            Color : 'green'
+        Monster: {
+            health : 100,
+            color : 'green'
         },
         gameIsRunning: false,
         turns: []
@@ -115,39 +115,39 @@ new Vue({
         playerColorChange : function ()
         {
             if (this.getPlayerHealth() < 70){
-                this.player.Color = '#FFC107';
+                this.Player.color = '#FFC107';
             }
             if (this.getPlayerHealth() < 30) {
-                this.player.Color = '#F00';
+                this.Player.color = '#F00';
             }
             if(this.getPlayerHealth() > 70) {
-                this.player.Color = 'green';
+                this.Player.color = 'green';
             }
         },
         monsterColorChange: function ()
         {
             if (this.getMonsterHealth() < 70){
-                this.monster.Color = '#FFC107';
+                this.Monster.color = '#FFC107';
             }
             if (this.getMonsterHealth() < 30) {
-                this.monster.Color = '#F00';
+                this.Monster.color = '#F00';
             }
             if(this.getMonsterHealth() > 70) {
-                this.monster.Color = 'green';
+                this.Monster.color = 'green';
             }
         },
         //geters and seters
         getPlayerHealth : function () {
-            return this.player.Health;
+            return this.Player.health;
         },
         setPlayerHealth : function (h) {
-            this.player.Health = h;
+            this.Player.health = h;
         },
         getMonsterHealth : function () {
-            return this.monster.Health;
+            return this.Monster.health;
         },
         setMonsterHealth : function (h) {
-            this.monster.Health = h;
+            this.Monster.health = h;
         }
     }
     

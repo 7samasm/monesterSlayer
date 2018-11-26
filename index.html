@@ -16,8 +16,8 @@
                         ref="player"
                         class="healthbar text-center"
                         style=" margin: 0; color: white;"
-                        :style="[{width: player.Health + '%'},{'background-color':player.Color}]">
-                    {{ player.Health }}
+                        :style="[{width: Player.health + '%'},{'background-color':Player.color}]">
+                    {{ Player.health }}
                 </div>
             </div>
         </div>
@@ -28,8 +28,8 @@
                         ref="monster"
                         class="healthbar text-center"
                         style=" margin: 0; color: white;"
-                        :style="[{width: monster.Health + '%'},{'background-color':monster.Color}]">
-                    {{ monster.Health }}
+                        :style="[{width: Monster.health + '%'},{'background-color':Monster.color}]">
+                    {{ Monster.health }}
                 </div>
             </div>
         </div>
