@@ -17,6 +17,7 @@ new Vue({
         gameIsRunning: false,
         turns: []
     },
+    //methods are going here ..
     methods: {
         startGame: function () 
         {
